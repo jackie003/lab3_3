@@ -40,7 +40,7 @@ class App extends React.Component {
 
     render(){
       return(
-        <div>
+        <div className="App">
           {
             Array.from(this.state.chars).map((item, index) => 
                   <CharacterCard value={item} key={index}
