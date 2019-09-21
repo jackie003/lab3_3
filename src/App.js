@@ -55,7 +55,6 @@ class App extends React.Component {
                   activationHandler= {this.activationHandler}
                   restartGame = {this.state.restartGame}/>
 
-
                   )
           }
           <h2 className = "card2">Selected</h2>
