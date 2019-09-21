@@ -36,8 +36,6 @@ class App extends React.Component {
         }
 
    }}
-   
-
     render(){
       return(
         <div className="App">
@@ -63,6 +61,7 @@ class App extends React.Component {
         <div className = "card2">Attemp {this.state.attempt}</div>
         {
           this.state.completed && <h4>Complete</h4>
+        
         }
 
 </div>
