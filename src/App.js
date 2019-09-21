@@ -17,7 +17,8 @@ const prepareStateFromWord = (given_word) => {
   chars,
   attempt: 1,
   guess: [],
-  completed: false
+  completed: false,
+  restartGame: 1
   }
  }
 
@@ -36,6 +37,14 @@ class App extends React.Component {
         }
 
    }}
+   restartGame = () => {
+    this.setState({
+      restartGame: this.state.restartGame + 1,
+      completed: !this.state.completed
+    });
+  };
+   
+
     render(){
       return(
         <div className="App">
@@ -43,7 +52,8 @@ class App extends React.Component {
           {
             Array.from(this.state.chars).map((item, index) => 
                   <CharacterCard value={item} key={index}
-                  activationHandler= {this.activationHandler}/>
+                  activationHandler= {this.activationHandler}
+                  restartGame = {this.state.restartGame}/>
 
 
                   )
@@ -59,9 +69,12 @@ class App extends React.Component {
           ))
         }
         <div className = "card2">Attemp {this.state.attempt}</div>
+    
         {
           this.state.completed && <h4>Complete</h4>
-        
+        }
+        {
+          this.state.completed &&<button onClick={this.restartGame}>New Game</button>
         }
 
 </div>
