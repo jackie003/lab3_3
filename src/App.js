@@ -52,6 +52,7 @@ class App extends React.Component {
           {
             Array.from(this.state.chars).map((item, index) => 
                   <CharacterCard value={item} key={index}
+                  attempt={this.state.attempt}
                   activationHandler= {this.activationHandler}
                   restartGame = {this.state.restartGame}/>
 

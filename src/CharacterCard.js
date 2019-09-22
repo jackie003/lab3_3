@@ -12,7 +12,7 @@ class CharacterCard extends React.Component {
         this.setState({
             active:true
         });
-        if (this.state.active === false)
+        if (this.state.active == false)
         this.props.activationHandler(this.props.value);
 
     }
